@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./BrandIcons";
 import { useEffect, useRef } from "react";
+import { useI18n } from "@/lib/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const el = ref.current;
@@ -47,7 +50,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border/60 glass px-3 py-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
           <Sparkles className="size-3 text-primary" />
-          <span>Transitioning into AI Engineering</span>
+          <span>{t('hero.transitioning')}</span>
           <span className="text-foreground/60">→</span>
         </motion.a>
 
@@ -66,11 +69,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          Software Developer building intelligent systems with{" "}
-          <span className="text-foreground">Python</span>,{" "}
-          <span className="text-foreground">Generative AI</span>,{" "}
-          <span className="text-foreground">RAG</span> and{" "}
-          <span className="text-foreground">LangChain</span>. AI Engineering in progress.
+          <span dangerouslySetInnerHTML={{ __html: t('hero.description') }} />
         </motion.p>
 
         <motion.div
@@ -83,7 +82,7 @@ export function Hero() {
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02]"
           >
-            View Projects
+            {t('hero.view_projects')}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
@@ -113,7 +112,7 @@ export function Hero() {
           className="mt-20 flex items-center justify-center gap-3 text-xs text-muted-foreground font-mono"
         >
           <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400/60" />
-          Available for AI engineering opportunities
+          {t('hero.available_opportunities')}
         </motion.div>
       </div>
     </section>

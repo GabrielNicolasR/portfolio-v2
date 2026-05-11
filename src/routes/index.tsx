@@ -7,6 +7,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { AIJourney } from "@/components/portfolio/AIJourney";
 import { Contact } from "@/components/portfolio/Contact";
+import { I18nProvider } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,15 +33,17 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative dark bg-background text-foreground antialiased">
-      <Nav />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <AIJourney />
-      <Contact />
-    </main>
+    <I18nProvider>
+      <main className="relative dark bg-background text-foreground antialiased">
+        <Nav />
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <AIJourney />
+        <Contact />
+      </main>
+    </I18nProvider>
   );
 }

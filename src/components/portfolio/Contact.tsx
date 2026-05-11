@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./BrandIcons";
+import { useI18n } from "@/lib/i18n";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "gabrielrochasa@gmail.com", href: "mailto:gabrielrochasa@gmail.com" },
-  { icon: Github, label: "GitHub", value: "@GabrielNicolasR", href: "https://github.com/GabrielNicolasR" },
-  { icon: Linkedin, label: "LinkedIn", value: "Gabriel de Sá", href: "https://linkedin.com/in/gabriel-de-sá-711412194/" },
+  { icon: Mail, labelKey: "contact.email", value: "gabrielrochasa@gmail.com", href: "mailto:gabrielrochasa@gmail.com" },
+  { icon: Github, labelKey: "contact.github", value: "@GabrielNicolasR", href: "https://github.com/GabrielNicolasR" },
+  { icon: Linkedin, labelKey: "contact.linkedin", value: "Gabriel de Sá", href: "https://linkedin.com/in/gabriel-de-sá-711412194/" },
 ];
 
 export function Contact() {
+  const { t } = useI18n();
   return (
     <section id="contact" className="relative overflow-hidden px-6 py-32 sm:py-40">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -21,19 +23,19 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Contact</div>
+          <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t('contact.eyebrow')}</div>
           <h2 className="mt-4 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1] text-gradient">
-            Let's build something <span className="font-display">remarkable.</span>
+            {t('contact.title')}
           </h2>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
-            Open to AI engineering roles, collaborations and ambitious projects. Recruiters and teams — reach out.
+            <span dangerouslySetInnerHTML={{ __html: t('contact.description') }} />
           </p>
 
           <a
             href="mailto:gabrielrochasa@gmail.com"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:scale-[1.02]"
           >
-            Get in touch
+            {t('contact.get_in_touch')}
             <ArrowUpRight className="size-4" />
           </a>
         </motion.div>
@@ -43,7 +45,7 @@ export function Contact() {
             const Icon = c.icon;
             return (
               <motion.a
-                key={c.label}
+                key={c.labelKey}
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
@@ -57,7 +59,7 @@ export function Contact() {
                   <Icon className="size-5 text-primary" />
                   <ArrowUpRight className="size-4 text-muted-foreground transition-all group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </div>
-                <div className="mt-4 text-xs font-mono uppercase tracking-widest text-muted-foreground">{c.label}</div>
+                <div className="mt-4 text-xs font-mono uppercase tracking-widest text-muted-foreground">{t(c.labelKey)}</div>
                 <div className="mt-1 text-sm font-medium truncate">{c.value}</div>
               </motion.a>
             );
@@ -65,8 +67,8 @@ export function Contact() {
         </div>
 
         <footer className="mt-24 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground font-mono">
-          <span>© 2026 Gabriel Nicolas. Built with care.</span>
-          <span>Brazil · Remote-friendly</span>
+          <span>{t('contact.footer')}</span>
+          <span>{t('contact.location')}</span>
         </footer>
       </div>
     </section>

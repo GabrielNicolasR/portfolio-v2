@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { Bot, BrainCircuit, Cpu, Database, Network, Sparkles, Workflow, Zap } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const pillars = [
-  { icon: Sparkles, label: "Generative AI" },
-  { icon: Workflow, label: "LangChain" },
-  { icon: Database, label: "RAG Systems" },
-  { icon: Cpu, label: "Python" },
-  { icon: BrainCircuit, label: "Machine Learning" },
-  { icon: Bot, label: "AI Agents" },
-  { icon: Network, label: "LLM Applications" },
-  { icon: Zap, label: "Continuous Learning" },
+  { icon: Sparkles, labelKey: "ai.generative_ai" },
+  { icon: Workflow, labelKey: "ai.langchain" },
+  { icon: Database, labelKey: "ai.rag_systems" },
+  { icon: Cpu, labelKey: "ai.python" },
+  { icon: BrainCircuit, labelKey: "ai.machine_learning" },
+  { icon: Bot, labelKey: "ai.ai_agents" },
+  { icon: Network, labelKey: "ai.llm_applications" },
+  { icon: Zap, labelKey: "ai.continuous_learning" },
 ];
 
 export function AIJourney() {
+  const { t } = useI18n();
   return (
     <section id="ai" className="relative overflow-hidden px-6 py-32 sm:py-40">
       {/* atmospheric background */}
@@ -34,13 +36,10 @@ export function AIJourney() {
             AI Journey
           </div>
           <h2 className="mt-6 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] leading-[1] text-gradient">
-            Building the future,<br />
-            <span className="font-display text-primary">one model at a time.</span>
+            {t('ai.title')}
           </h2>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            I'm investing deeply in AI Engineering — studying the architectures, frameworks and patterns that
-            power modern intelligent systems. From RAG pipelines to autonomous agents, I'm building toward
-            production-grade AI software.
+            {t('ai.description')}
           </p>
         </motion.div>
 
@@ -49,16 +48,16 @@ export function AIJourney() {
             const Icon = p.icon;
             return (
               <motion.div
-                key={p.label}
+                key={p.labelKey}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="group relative rounded-2xl glass p-5 transition-all hover:border-primary/40 hover:-translate-y-1"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-500" />
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-500`} />
                 <Icon className="relative size-5 text-primary transition-transform group-hover:scale-110" />
-                <div className="relative mt-4 text-sm font-medium">{p.label}</div>
+                <h3 className="text-lg sm:text-xl font-medium tracking-tight">{t(p.labelKey)}</h3>
               </motion.div>
             );
           })}

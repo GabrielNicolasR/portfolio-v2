@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#ai", label: "AI" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", labelKey: "nav.about" },
+  { href: "#skills", labelKey: "nav.skills" },
+  { href: "#experience", labelKey: "nav.experience" },
+  { href: "#projects", labelKey: "nav.projects" },
+  { href: "#ai", labelKey: "nav.ai" },
+  { href: "#contact", labelKey: "nav.contact" },
 ];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -48,7 +51,7 @@ export function Nav() {
               href={l.href}
               className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              {l.label}
+              {t(l.labelKey)}
             </a>
           ))}
         </div>
@@ -56,8 +59,9 @@ export function Nav() {
           href="#contact"
           className="ml-1 hidden sm:inline-flex items-center rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-all hover:opacity-90"
         >
-          Get in touch
+          {t('nav.get_in_touch')}
         </a>
+        <LanguageSwitcher />
       </nav>
     </motion.header>
   );
