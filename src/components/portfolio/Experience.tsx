@@ -35,7 +35,7 @@ export function Experience() {
       title={t('experience.title')}
     >
       <div className="relative">
-        <div className="absolute left-3 sm:left-4 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-border to-transparent" />
+        <div className="absolute left-1.5 sm:left-2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-border to-transparent" />
         <div className="space-y-10">
           {items.map((it, i) => (
             <motion.div
@@ -46,7 +46,7 @@ export function Experience() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="relative pl-12 sm:pl-16"
             >
-              <div className="absolute left-0 sm:left-1 top-1.5 flex items-center justify-center">
+              <div className="absolute left-1.5 sm:left-2 top-1.5 flex items-center justify-center -translate-x-1/2">
                 <span className="size-2.5 rounded-full bg-primary shadow-[0_0_16px] shadow-primary/70" />
                 <span className="absolute size-6 rounded-full border border-primary/30" />
               </div>
