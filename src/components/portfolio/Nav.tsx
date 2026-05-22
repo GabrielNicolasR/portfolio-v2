@@ -59,7 +59,7 @@ export function Nav() {
           href="#contact"
           className="ml-1 hidden sm:inline-flex items-center rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-all hover:opacity-90"
         >
-          {t('nav.get_in_touch')}
+          {t("nav.get_in_touch")}
         </a>
         <LanguageSwitcher />
       </nav>

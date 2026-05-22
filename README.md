@@ -20,11 +20,13 @@ This project uses the latest in the React ecosystem:
 ### 🏁 Getting Started
 
 1.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 2.  **Start the development environment:**
+
     ```bash
     npm run dev
     ```
@@ -37,6 +39,7 @@ This project uses the latest in the React ecosystem:
 ### 🌐 Deploy (Vercel)
 
 The project is optimized for deployment on **Vercel**.
+
 1. Connect your GitHub repository to Vercel.
 2. Vercel will automatically detect the Vite/TanStack Start configurations.
 3. Configure your environment variables in the Vercel dashboard, if necessary.
@@ -44,6 +47,7 @@ The project is optimized for deployment on **Vercel**.
 ### 🌍 Internationalization
 
 The portfolio has complete support for multiple languages:
+
 - **🇺🇸 English** (default)
 - **🇧🇷 Portuguese** (Brazil)
 
@@ -69,11 +73,13 @@ Este projeto utiliza o que há de mais moderno no ecossistema React:
 ### 🏁 Como Iniciar
 
 1.  **Instale as dependências:**
+
     ```bash
     npm install
     ```
 
 2.  **Inicie o ambiente de desenvolvimento:**
+
     ```bash
     npm run dev
     ```
@@ -85,7 +91,8 @@ Este projeto utiliza o que há de mais moderno no ecossistema React:
 
 ### 🌐 Deploy (Vercel)
 
-O projeto está otimizado para deploy na **Vercel**. 
+O projeto está otimizado para deploy na **Vercel**.
+
 1. Conecte seu repositório GitHub à Vercel.
 2. A Vercel detectará automaticamente as configurações do Vite/TanStack Start.
 3. Configure suas variáveis de ambiente no painel da Vercel, se necessário.
@@ -93,6 +100,7 @@ O projeto está otimizado para deploy na **Vercel**.
 ### 🌍 Internacionalização
 
 O portfólio possui suporte completo para múltiplos idiomas:
+
 - **🇺🇸 Inglês** (padrão)
 - **🇧🇷 Português** (Brasil)
 

@@ -33,11 +33,9 @@ export function Hero() {
           "radial-gradient(600px circle at var(--mx,50%) var(--my,30%), oklch(0.78 0.14 265 / 0.12), transparent 60%)",
       }}
     >
-      {/* grid + radial */}
       <div className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
       <div className="absolute inset-x-0 top-0 h-[80vh] [background:var(--gradient-radial)]" />
 
-      {/* glow blobs */}
       <div className="pointer-events-none absolute -top-32 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] animate-glow" />
       <div className="pointer-events-none absolute bottom-0 right-1/4 h-[300px] w-[400px] rounded-full bg-accent/10 blur-[100px] animate-float" />
 
@@ -50,7 +48,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border/60 glass px-3 py-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
           <Sparkles className="size-3 text-primary" />
-          <span>{t('hero.transitioning')}</span>
+          <span>{t("hero.transitioning")}</span>
           <span className="text-foreground/60">→</span>
         </motion.a>
 
@@ -69,7 +67,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          <span dangerouslySetInnerHTML={{ __html: t('hero.description') }} />
+          <span dangerouslySetInnerHTML={{ __html: t("hero.description") }} />
         </motion.p>
 
         <motion.div
@@ -82,7 +80,7 @@ export function Hero() {
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all hover:scale-[1.02]"
           >
-            {t('hero.view_projects')}
+            {t("hero.view_projects")}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
@@ -112,7 +110,7 @@ export function Hero() {
           className="mt-20 flex items-center justify-center gap-3 text-xs text-muted-foreground font-mono"
         >
           <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400/60" />
-          {t('hero.available_opportunities')}
+          {t("hero.available_opportunities")}
         </motion.div>
       </div>
     </section>

@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import { Globe } from 'lucide-react';
-import { useI18n, type Language } from '@/lib/i18n';
+import { motion } from "framer-motion";
+import { Globe } from "lucide-react";
+import { useI18n, type Language } from "@/lib/i18n";
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useI18n();
 
   const languages: { code: Language; name: string; flag: string }[] = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'pt', name: 'Português', flag: '🇧🇷' },
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "pt", name: "Português", flag: "🇧🇷" },
   ];
 
   return (
@@ -24,8 +24,8 @@ export function LanguageSwitcher() {
             onClick={() => setLanguage(lang.code)}
             className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
               language === lang.code
-                ? 'bg-foreground text-background'
-                : 'text-muted-foreground hover:text-foreground'
+                ? "bg-foreground text-background"
+                : "text-muted-foreground hover:text-foreground"
             }`}
             title={lang.name}
           >

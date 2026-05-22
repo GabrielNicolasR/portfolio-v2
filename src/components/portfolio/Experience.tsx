@@ -18,22 +18,14 @@ const items = [
     company: "Workana",
     roleKey: "experience.workana_role",
     periodKey: "experience.previous",
-    points: [
-      "experience.workana_point1",
-      "experience.workana_point2",
-      "experience.workana_point3",
-    ],
+    points: ["experience.workana_point1", "experience.workana_point2", "experience.workana_point3"],
   },
 ];
 
 export function Experience() {
   const { t } = useI18n();
   return (
-    <Section
-      id="experience"
-      eyebrow={t('experience.eyebrow')}
-      title={t('experience.title')}
-    >
+    <Section id="experience" eyebrow={t("experience.eyebrow")} title={t("experience.title")}>
       <div className="relative">
         <div className="absolute left-1.5 sm:left-2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-border to-transparent" />
         <div className="space-y-10">
@@ -52,7 +44,9 @@ export function Experience() {
               </div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-medium tracking-tight">{t(it.roleKey)}</h3>
+                  <h3 className="text-xl sm:text-2xl font-medium tracking-tight">
+                    {t(it.roleKey)}
+                  </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     <span className="text-foreground">{it.company}</span>
                   </p>
