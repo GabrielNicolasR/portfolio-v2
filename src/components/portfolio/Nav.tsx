@@ -57,7 +57,7 @@ export function Nav() {
         </div>
         <a
           href="#contact"
-          className="ml-1 hidden sm:inline-flex items-center rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-all hover:opacity-90"
+          className="ml-1 inline-flex md:hidden items-center rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-all hover:opacity-90"
         >
           {t("nav.get_in_touch")}
         </a>
