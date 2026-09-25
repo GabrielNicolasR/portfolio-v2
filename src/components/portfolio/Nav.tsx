@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -55,6 +56,14 @@ export function Nav() {
             </a>
           ))}
         </div>
+        <a
+          href="/gabriel-nicolas-cv.pdf"
+          download
+          className="hidden md:inline-flex ml-1 items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-all hover:bg-primary/20 hover:border-primary/60"
+        >
+          <Download className="size-3" />
+          {t("nav.download_cv")}
+        </a>
         <a
           href="#contact"
           className="ml-1 inline-flex md:hidden items-center rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background transition-all hover:opacity-90"

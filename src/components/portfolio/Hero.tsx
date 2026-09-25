@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Download, Sparkles } from "lucide-react";
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./BrandIcons";
 import { useEffect, useRef } from "react";
 import { useI18n } from "@/lib/i18n";
@@ -82,6 +82,14 @@ export function Hero() {
           >
             {t("hero.view_projects")}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+          <a
+            href="/gabriel-nicolas-cv.pdf"
+            download
+            className="group inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary hover:bg-primary/20 hover:border-primary/60 transition-all hover:scale-[1.02]"
+          >
+            <Download className="size-4 transition-transform group-hover:-translate-y-0.5" />
+            {t("hero.download_cv")}
           </a>
           <a
             href="https://github.com/GabrielNicolasR"
