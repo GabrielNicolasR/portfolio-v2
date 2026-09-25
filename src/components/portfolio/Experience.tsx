@@ -19,7 +19,7 @@ const items = [
   },
   {
     company: "Cadmus",
-    roleKey: "experience.workana_role", // reaproveitando a key para o estágio
+    roleKey: "experience.workana_role",
     periodKey: "experience.workana_period",
     typeKey: "experience.type_internship",
     typeColor: "text-blue-400 bg-blue-400/10 border-blue-400/20",

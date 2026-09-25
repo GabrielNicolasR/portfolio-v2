@@ -56,7 +56,7 @@ export function AIJourney() {
       <div className="absolute bottom-0 right-0 h-[400px] w-[600px] rounded-full bg-accent/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-6xl">
-        {/* Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ export function AIJourney() {
           </p>
         </motion.div>
 
-        {/* Stats row */}
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export function AIJourney() {
           })}
         </motion.div>
 
-        {/* Topics with progress */}
+
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {topics.map((topic, index) => {
             const Icon = topic.icon;
@@ -156,7 +156,7 @@ export function AIJourney() {
           })}
         </div>
 
-        {/* Roadmap */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
