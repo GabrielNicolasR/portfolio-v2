@@ -18,9 +18,9 @@ export function About() {
       title={<span dangerouslySetInnerHTML={{ __html: t("about.title") }} />}
     >
       <div className="grid gap-10 md:grid-cols-5">
-
+        {/* Text + photo column */}
         <div className="md:col-span-3 space-y-8">
-
+          {/* Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -61,7 +61,7 @@ export function About() {
             </div>
           </motion.div>
 
-
+          {/* Paragraphs */}
           <div className="space-y-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
             <p>{t("about.paragraph1")}</p>
             <p>{t("about.paragraph2")}</p>
@@ -69,7 +69,7 @@ export function About() {
           </div>
         </div>
 
-
+        {/* Stats column */}
         <div className="md:col-span-2 grid grid-cols-3 md:grid-cols-1 gap-3">
           {stats.map((s, i) => (
             <motion.div
