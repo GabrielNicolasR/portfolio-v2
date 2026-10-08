@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { ThemeProvider, themeInitScript } from "@/lib/theme";
+import { I18nProvider } from "@/lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -32,7 +34,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
 
@@ -72,15 +74,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Portfolio" },
-      { name: "description", content: "AI & Design Portfolio" },
-      { name: "author", content: "Portfolio" },
-      { property: "og:title", content: "Portfolio" },
-      { property: "og:description", content: "AI & Design Portfolio" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { title: "Gabriel Nicolas" },
+      { name: "author", content: "Gabriel Nicolas Rocha de Sá" },
+      { name: "theme-color", content: "#ffffff", media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: "#0b131e", media: "(prefers-color-scheme: dark)" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -100,8 +105,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    // The inline script mutates <html> classes before hydration, hence suppressHydrationWarning.
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <HeadContent />
       </head>
       <body>
@@ -117,7 +124,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <ThemeProvider>
+        <I18nProvider>
+          <Outlet />
+        </I18nProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
