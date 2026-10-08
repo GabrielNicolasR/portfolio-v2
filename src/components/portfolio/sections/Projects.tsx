@@ -62,12 +62,13 @@ function ProjectCard({ project, compact }: { project: Project; compact?: boolean
   return (
     <article
       className={cn(
-        "group/card flex h-full flex-col rounded-xl border border-border bg-card transition-[border-color,box-shadow] duration-200",
-        "hover:border-border-strong hover:shadow-[0_12px_32px_-16px_rgb(0_0_0/0.18)]",
+        "group/card flex h-full flex-col rounded-xl border bg-card transition-[border-color,box-shadow] duration-200",
+        "hover:shadow-[0_12px_32px_-16px_rgb(0_0_0/0.18)]",
+        project.featured 
+          ? "border-border border-t-2 border-t-brand hover:border-border-strong hover:border-t-brand" 
+          : "border-border hover:border-border-strong"
       )}
     >
-      {/* Top accent line on featured cards */}
-      {project.featured && <div aria-hidden="true" className="h-0.5 rounded-t-xl bg-brand" />}
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <div className="flex items-start justify-between gap-4">
